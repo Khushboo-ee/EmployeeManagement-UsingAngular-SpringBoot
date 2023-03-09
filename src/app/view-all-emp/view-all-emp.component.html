@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">Employee Info</div>
+        </div>
+        <div class="card-body">
+            <table class="table table-info">
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Employee First Name</th>
+                    <th>Employee Last Name</th>
+                    <th>Employee emailId</th>
+                    <th>Operations</th>
+                </tr>
+                <tr *ngFor="let emp of empinfo">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.emailId}}</td>
+                    <td>
+                        <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmployeeDetails(emp.id)"/>
+                        &nbsp; &nbsp; &nbsp; 
+                        <input type="button" value="Modify" class="btn btn-primary" (click)="updateEmpDetails(emp.id)" />
+                        &nbsp; &nbsp; &nbsp; 
+                        <input type="button" value="View Emp info" class="btn btn-success" (click)="getOneEmpDetails(emp.id)" />
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
